@@ -18,7 +18,7 @@ def movie_poster_fetcher(imdb_link):
     ## Display Movie Poster
     url_data = requests.get(imdb_link, headers=hdr).text
     s_data = BeautifulSoup(url_data, 'html.parser')
-    imdb_dp = s_data.find("meta", property="og:image")
+    imdb_dp = s_data.find("meta", property="og:image1")
     movie_poster_link = imdb_dp.attrs['content']
     u = urlopen(movie_poster_link)
     raw_data = u.read()
